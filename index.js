@@ -1,6 +1,6 @@
-function greet(name) {
-    console.log('Hello ' + name);
-} // no need for semicol at end of creating function (like java)
-
-greet('six'); 
-greet('seven')
+// ACCEPT USER INPUT
+let username;
+document.getElementById("submitButton").onclick = function () {
+    username = document.getElementById("nameText").value;
+    console.log(username)
+}

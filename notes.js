@@ -98,3 +98,36 @@ function square(number) {
 }
 
 let twoSquared = square(2);
+
+// == BROCODE ==
+
+// VARIABLES
+// Two steps
+// 1. Declaration (var, let, const)
+// 2. Assignment (= assignment operator)
+
+let x1; // declaration
+x1 = 21; // assignment
+let x2 = 21; // both together
+
+// we can access and set the content of html files like so:
+firstName = "six";
+age = 19;
+let student = true;
+
+document.getElementById("p1").innerHTML = "hello " + firstName;
+document.getElementById("p2").innerHTML = "you are " + age + " years old";
+document.getElementById("p3").innerHTML = "enrolled " + student;
+
+
+// ACCEPT USER INPUT
+
+// simple way
+let username = window.prompt("whats ur name"); // browser displays popup box, not practical
+
+// html advanced way
+let username2;
+document.getElementById("submitButton").onclick = function () { // do onlclick for setting a function to be called on click!
+    username2 = document.getElementById("nameText").value; // grab value within textbook
+    console.log(username2) 
+}
