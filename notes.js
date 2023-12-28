@@ -170,3 +170,16 @@ x = Math.min(-3, 100, 2, -90);
 
 //constant pi
 x = Math.PI;
+
+// USEFUL STRING METHODS
+usename = "bro";
+username.length // length
+username.charAt(2); // charAt
+username.indexOf("r"); // index of first occurance of a character
+username.lastIndexOf("r"); // index of last occurance of a character
+username = " whats up ";
+username = username.trim(); // gets rid of leading and trailing empty spaces
+document.getElementById("p1").innerHTML = username; // no need to trim, html auto trims stuff (for <p> at least)
+
+let phoneNumber = "123-456-7890";
+phoneNumber.replaceAll("-", ""); 
