@@ -395,3 +395,18 @@ for (let i = 1; i <= 20; i++) {
     }
     console.log(i);
 }
+
+// FUNCTIONS
+
+function happyBday(name) { // simple syntax, just say function before the name
+    console.log("Happy Birthday", name);
+}
+
+happyBday("bro");
+
+// RETURN STATEMENTS
+
+function areaRect(width, height) {
+    return width * height;
+}
+console.log(areaRect(10, 20));
