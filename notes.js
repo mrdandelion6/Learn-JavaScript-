@@ -257,3 +257,72 @@ submitButton.onclick = function() {
         alert("You are paying with PayPal!");
     }
 }
+
+// SWITCHES
+// used in place of several else if statements
+// examins a value for a match against many case clauses
+
+let grade = "A";
+
+// this is inefficient
+if (grade == "A") {
+    console.log("You did great!");
+}
+if (grade == "B") {
+    console.log("You did good!");
+}
+if (grade == "C") {
+    console.log("You did okay!");
+}
+if (grade == "D") {
+    console.log("You passed!");
+}
+if (grade == "F") {
+    console.log("You failed!");
+}
+else {
+    console.log("Not a grade!");
+}
+
+// use a switch, more efficient:
+switch (grade) {
+    case "A": 
+        console.log("You did great");
+        break; // add a break after the code for a case is done
+    case "B":
+        console.log("You did good!");
+        break;
+    case "C":
+        console.log("You did okay!");
+        break;
+    case "D":
+        console.log("You passed!");
+        break;
+    case "F":
+        console.log("You failed!");
+        break;
+    default: // default for no other matching clause
+        console.log("Not a letter grade");
+}
+
+// can also check conditions
+grade = 95;
+
+switch (true) { // compare true against a bunch of conditions
+    case grade >= 90: // compares this against true
+        console.log("You did great");
+        break; 
+    case grade >= 80:
+        console.log("You did good!");
+        break;
+    case grade >= 70:
+        console.log("You did okay!");
+        break;
+    case grade >= 50:
+        console.log("You passed!");
+        break;
+    case grade < 50:
+        console.log("You failed!");
+    default: // default for no other matching clause
+        console.log("Not a letter grade");
+}
