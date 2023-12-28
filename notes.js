@@ -130,4 +130,25 @@ let username2;
 document.getElementById("submitButton").onclick = function () { // do onlclick for setting a function to be called on click!
     username2 = document.getElementById("nameText").value; // grab value within textbook
     console.log(username2) 
+    document.getElementById("myLabel").innerHTML = username; // set the new innerHTML (text) for the label to be the provided username!
 }
+
+
+// TYPE CONVERSION
+age = window.prompt("How old are you?"); // we retrieve this as a string, want to turn it into a number
+age = Number(age); // convert the string to a number
+age += 1;
+console.log("happy bday, you are " + age);
+
+// more examples of converting type
+let z;
+x = Number("3.14"); // simple
+y = String(3.14);
+z = Boolean("pizza");
+console.log(x, typeof x);
+console.log(y, typeof y);
+console.log(z, typeof z);
+
+// converting something that is not a number into a number, eg:
+x = Number("bars");
+// will result in the value of x being NaN (not a number)
