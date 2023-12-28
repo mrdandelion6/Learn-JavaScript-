@@ -195,4 +195,10 @@ firstname = username.slice(0, space)
 lastName = username.slice(space + 1);
 
 // METHOD CHAINING
-// call one method after another in a continuous line of code
+// call one method after another in a continuous line of code (simple)
+username = "six";
+let letter = username.charAt(0);
+letter = letter.toUpperCase();
+
+// we can write the above code more elegantly using method chaining 
+letter = username.charAt(0).toUpperCase();
