@@ -344,3 +344,11 @@ if (temp > 30 || 0 > temp) {
 if (!(temp > 0)) {
     console.log("it's freezing");
 }
+
+// while loops
+username = "";
+while (username == "" || username == null) { // repeatedly prompt users until they provide a username
+    username = window.prompt("choose a username");
+}
+
+console.log("hello", username);
