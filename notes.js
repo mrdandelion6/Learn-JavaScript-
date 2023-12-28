@@ -183,3 +183,16 @@ document.getElementById("p1").innerHTML = username; // no need to trim, html aut
 
 let phoneNumber = "123-456-7890";
 phoneNumber.replaceAll("-", ""); 
+
+// slice() extracts a section of a string and returns it as a new string,
+// doesnt modify original string
+username = "six pop";
+firstName = username.slice(0, 3); // slicing doesnt include last index
+lastName = username.slice(4); // no ending index implies go to end
+
+let space = username.indexOf(" ");
+firstname = username.slice(0, space)
+lastName = username.slice(space + 1);
+
+// METHOD CHAINING
+// call one method after another in a continuous line of code
