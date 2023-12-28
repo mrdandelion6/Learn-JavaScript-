@@ -4,3 +4,11 @@
     text-align: center;
     margin: 10px auto;
 }
+
+#increase {
+    color: green;
+}
+#decrease {
+    color: red;
+}
+
