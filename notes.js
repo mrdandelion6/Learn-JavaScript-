@@ -61,5 +61,18 @@ person['name'] = 'sixpop';
 // we nomrally use dot notation, and only really use bracket notation if the property name could vary at runtime
 // eg if the users choose the property name, then we can have a variable for the property name:
 
-x = 'name'; // x may vary at runtime
-person[x] = 'six';
+let selection = 'name'; // x may vary at runtime
+person[selection] = 'six';
+
+// ARRAYS
+let selectedColors =['red', 'blue']; // array literaly, same as python
+x = selectedColors[0]; // same indexing as python
+// main difference is we do not get any indexing errors. empty indices are just undefined
+// moreover, we can have gaps in the list. eg) [ 'red', 'blue', 'green', <2 empty items>, 'orange' ]
+
+selectedColors[2] = 'green';
+selectedColors[5] = 'orange'; // skipped 3 and four, 2 empty items
+
+// note that typeof array is object. it has properties such as length, etc.
+// note that empty items as gaps in the list are counted in the length, ie) the length of the array goes up to the last index where an item exists
+// for example ['red', 'blue', 'green', <2 empty items>, 'orange'] has a length of 6.

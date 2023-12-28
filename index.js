@@ -1,7 +1,3 @@
-let person = {}; //object literal
-person = {
-    name: 'fsl', // note no semicols
-    age: 20
-};
+let selectedColors =['red', 'blue']; // array literaly, same as python
 
-console.log(person);
+console.log(selectedColors);
