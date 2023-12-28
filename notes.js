@@ -212,3 +212,48 @@ if (age >= 18) {
     console.log("You are a child");
 }
 
+// CHECKED PROPERTY
+// lets us know if a checkbox or a radio button is selected
+// .checked is a boolean property for radiobuttons and checkboxes
+
+// checkboxes:
+document.getElementById("hiButton").onclick = function() {
+    if (document.getElementById("BoxYa").checked) { // use checked attribute
+        document.getElementById("hiButton").innerHTML = "thanks!";
+    } else {
+        document.getElementById("hiButton").innerHTML = "SELECT IT >:("
+    }
+}
+
+// factor out a constant
+const submitButton = document.getElementById("hiButton");
+
+submitButton.onclick = function() {
+    if (document.getElementById("BoxYa").checked) {
+        submitButton.innerHTML = "thanks!";
+    } else {
+        submitButton.innerHTML = "SELECT IT >:("
+    }
+}
+
+// radiobuttons
+const submitButton = document.getElementById("hiButton");
+const visaButton = document.getElementById("visaBtn");
+const masterButton = document.getElementById("masterBtn");
+const paypalButton = document.getElementById("ppBtn");
+
+submitButton.onclick = function() {
+    if (document.getElementById("BoxYa").checked) { //again, just used .checked
+        submitButton.innerHTML = "thanks!";
+    } else {
+        submitButton.innerHTML = "SELECT IT >:("
+    }
+
+    if (visaButton.checked) {
+        alert("You are paying with Visa!");
+    } else if (masterButton.checked) {
+        alert("You are paying with Mastercard!");
+    } else if (paypalButton.checked) {
+        alert("You are paying with PayPal!");
+    }
+}
