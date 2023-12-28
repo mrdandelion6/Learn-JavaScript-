@@ -152,3 +152,21 @@ console.log(z, typeof z);
 // converting something that is not a number into a number, eg:
 x = Number("bars");
 // will result in the value of x being NaN (not a number)
+
+
+// MATH
+// Math is an object that provides math functionality and constants (pi)
+x = 3.14;
+x = Math.round(x);
+x = Math.ceil(x);
+x = Math.floor(x);
+x = Math.pow(x, 2); // x^2
+x = Math.pow(x, x); // x^x
+x = Math.sqrt(x);
+x = Math.abs(x);
+// max and min
+x = Math.max(3, 4, 6);
+x = Math.min(-3, 100, 2, -90);
+
+//constant pi
+x = Math.PI;

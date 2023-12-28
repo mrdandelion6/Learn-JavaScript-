@@ -1,10 +1,11 @@
-let x;
-let y;
-let z;
+let x = -3.14;
+let y = 5;
+let z = 9;
 
-x = Number("3.14");
-y = String(3.14);
-z = Boolean("pizza");
-console.log(x, typeof x);
-console.log(y, typeof y);
-console.log(z, typeof z);
+let max;
+let min;
+
+max = Math.max(x, y, z);
+console.log(max);
+min = Math.min(x, y, z);
+console.log(min);
