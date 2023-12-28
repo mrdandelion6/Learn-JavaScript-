@@ -326,3 +326,21 @@ switch (true) { // compare true against a bunch of conditions
     default: // default for no other matching clause
         console.log("Not a letter grade");
 }
+
+// && (and), || (or) logical operators
+let temp = 15;
+if (30 > temp && temp > 0) {
+    console.log("good temp");
+} else {
+    console.log("bad temp");
+}
+
+if (temp > 30 || 0 > temp) {
+    console.log("bad temp");
+}
+
+// ! (not) operator
+
+if (!(temp > 0)) {
+    console.log("it's freezing");
+}
