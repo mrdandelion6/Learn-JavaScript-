@@ -1,3 +1,6 @@
-let selectedColors =['red', 'blue']; // array literaly, same as python
+function greet(name) {
+    console.log('Hello ' + name);
+} // no need for semicol at end of creating function (like java)
 
-console.log(selectedColors);
+greet('six'); 
+greet('seven')

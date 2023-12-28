@@ -76,3 +76,25 @@ selectedColors[5] = 'orange'; // skipped 3 and four, 2 empty items
 // note that typeof array is object. it has properties such as length, etc.
 // note that empty items as gaps in the list are counted in the length, ie) the length of the array goes up to the last index where an item exists
 // for example ['red', 'blue', 'green', <2 empty items>, 'orange'] has a length of 6.
+
+// FUNCTIONS
+function greet(name) {
+    console.log('Hello ' + name);
+} // no need for semicol at end of creating function (like java)
+
+greet('six');
+
+// parameter vs argument
+// parameters are what we define for functions to take in
+// arguments are what we actually provide when we call the function
+// "arguments are the value we supply for parameters"
+
+// passing in less arguments than expected doesnt crash code, it just considers missing arguments as undefined and proceeds
+
+// TYPES OF FUNCTIONS
+
+function square(number) {
+    return number * number; // a function with an actual return value
+}
+
+let twoSquared = square(2);
