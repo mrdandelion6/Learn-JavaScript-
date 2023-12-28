@@ -1,2 +1,6 @@
-let username = " whats     up "
-document.getElementById("p1").innerHTML = username;
+age = 11;
+if (age >= 18) {
+    console.log("You are an adult");
+} else {
+    console.log("You are a child");
+}

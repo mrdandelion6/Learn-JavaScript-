@@ -202,3 +202,13 @@ letter = letter.toUpperCase();
 
 // we can write the above code more elegantly using method chaining 
 letter = username.charAt(0).toUpperCase();
+
+// IF STATEMENTS
+// same as java
+age = 21;
+if (age >= 18) {
+    console.log("You are an adult");
+} else {
+    console.log("You are a child");
+}
+
