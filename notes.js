@@ -377,3 +377,21 @@ for (var i = 1; i <= 10; i++) {
 }
 
 console.log(i); // we can access i since we used var
+
+// BREAK AND CONTINUE
+// break: break out of a loop entirely
+// continue: skip a loop iteration
+
+for (let i = 1; i <= 20; i++) {
+    if (i == 13) {
+        break; // exits loop
+    }
+    console.log(i);
+}
+
+for (let i = 1; i <= 20; i++) {
+    if (i == 13) {
+        continue; // skips iteration of when i == 13
+    }
+    console.log(i);
+}

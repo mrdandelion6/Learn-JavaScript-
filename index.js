@@ -1,5 +1,6 @@
-for (var x = 1; x <= 10; x++) {
-    console.log(x);
+for (let i = 1; i <= 20; i++) {
+    if (i == 13) {
+        continue;
+    }
+    console.log(i);
 }
-
-console.log(x);
