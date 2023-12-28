@@ -1,6 +1,5 @@
-username = "";
-while (username == "" || username == null) {
-    username = window.prompt("choose a username");
+for (var x = 1; x <= 10; x++) {
+    console.log(x);
 }
 
-console.log("hello", username);
+console.log(x);

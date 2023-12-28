@@ -345,10 +345,35 @@ if (!(temp > 0)) {
     console.log("it's freezing");
 }
 
-// while loops
+// WHILE LOOP
 username = "";
 while (username == "" || username == null) { // repeatedly prompt users until they provide a username
     username = window.prompt("choose a username");
 }
 
 console.log("hello", username);
+
+// DO WHILE LOOP
+// do the loop body first, then check condition and repeat if met
+// differs from regular while in that we do something BEFORE checking
+username;
+
+do {
+    username = window.prompt("choose a username");
+} while (username == "" || username == null)
+
+console.log("hello", username);
+
+// FOR LOOPS
+// same as java 
+for (let x = 1; x <= 10; x++) {
+    console.log(x);
+}
+console.log(x); // can't access since we used let
+
+// doing var instead of let makes the variable accessible outside of loop
+for (var i = 1; i <= 10; i++) {
+    console.log(i);
+}
+
+console.log(i); // we can access i since we used var
