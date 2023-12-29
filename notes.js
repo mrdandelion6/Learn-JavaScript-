@@ -697,3 +697,42 @@ function isEven(elem) {
 }
 
 console.log(evens);
+
+// REDUCE() METHOD
+// array.reduce() reduces an array to a single value
+// a good example of reduce() method is to sum up all the values of an array
+let prices = [5, 10, 15, 20, 25];
+let totalPrice = prices.reduce(checkOut);
+console.log(totalPrice);
+
+// reduce() automatically passes an accumalated value, and the current element
+function checkOut(total, element) {
+    return total + element;
+}
+// it is important to understasnd that the accumulated value reduce() passes in
+// is just simply an accumulating sum of each callback return. it is nothing fancy.
+
+// CUSTOM SORTING ARRAYS
+// use array.sort(f) and pass in f as a callback function
+let grades = [100, 50, 20, 90, 60, 80];
+let descendingGrades = grades.sort(descendingSort);
+console.log(descendingGrades);
+let ascendingGrades = grades.sort(ascendingSort);
+console.log(ascendingGrades);
+// side remark: bc of aliasing, grades, descendingGrades, and ascendingGrades
+// are all the same object! to get around this and have descGrades and ascGrades
+// unchanging, just use slicing!
+
+// sort() auto passes 2 args into the callback
+// two values at a time. 
+function ascendingSort(x, y) { // compares two values at a time
+    return x - y; 
+} // the smaller this return value is, 
+// the smaller x is with respect to the other elements
+// smaller return value means x should be come before y
+
+function descendingSort(x, y) { 
+    return y - x; // swapping x and y "tricks" the sort into seeing
+}                 // the opposite comparison
+// a smaller return value here means x should come after y
+// makes sense
