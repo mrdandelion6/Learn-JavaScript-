@@ -573,3 +573,46 @@ class1.push(class2); // this just creates a nested array! doesn't work
 class1.pop();
 
 class1.push(...class2); // same as class1.extend(class2) from python
+
+// REST PARAMETERS
+// represents an indefinite number of parameters
+// packs arguments into an array
+
+let a = 1;
+let b = 2;
+let c = 3;
+let d = 4;
+let e = 5;
+
+console.log(sum(a, b));
+
+function sum(a, b) { // not suitable for more than 2 arguments!
+    return a + b
+}
+
+// solution: use rest parameters
+
+function sumRest(...nums) { // we dont pass in one single nums array!
+    let total = 0;
+    for (let num of nums) {
+        total += num;
+    }
+    return total;
+}
+// the arguments will automatically be packed into a nums array
+
+// we can pass in any number of args since we did ...nums!
+console.log(sumRest(a, b));
+console.log(sumRest(a));
+console.log(sumRest(a, b, c, d, e));
+
+// we can also do something like:
+function sumMix(x, y, ...nums) { // ie) minimum args is 2
+    let total = x + y;
+    for (let num of nums) {
+        total += num;
+    }
+    return total;
+}
+// when doing this make sure that the rest parameter is always the last parameter
+
