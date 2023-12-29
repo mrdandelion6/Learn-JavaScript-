@@ -4,7 +4,7 @@ Welcome to my JavaScript learning repository! 🚀 This repository is a collecti
 
 ## Contents
 - `notes.js`: Dive into my detailed notes on various JavaScript concepts.
-- `index.html` and `index.js`: These files were created for testing purposes during my learning process and may not be particularly useful.
+- `index.js`, `index.html`, and `style.css`: These files were created for testing purposes during my learning process and may not be particularly useful.
 - `compare.java`: This was created for comparing Java code syntax and behaviour against JavaScript during my learning process and may also not be particularly useful. 
 
 ## Interactive Site
