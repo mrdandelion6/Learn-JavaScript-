@@ -904,3 +904,39 @@ console.log(store.has("underwear")); // false now :(
 // Map.size property
 console.log(store.size);
 
+// OBJECT ORIENT PROGRAMMING IN JS
+// object is a group of properties and methods
+// properties are values an object has
+// methods are "object-specific functions", ie; stuff u can do with object
+// use . to access properties and methods!
+
+// how to make an object (NOT A CLASS):
+const car = {
+    // properties:
+    model: "Mustang", // separate with commas!
+    color: "black",
+    year: "1995",
+
+    // methods:
+    drive : function () {
+        console.log("vroom");
+    }, // note we have to put commas after method braces as well!
+
+    brake : function () {
+        console.log("skiddd");
+    }
+}
+// this created an object and stored it in car variable!
+// object has no class. it just a single object referenced in car variable
+
+console.log(car);
+// logging it shows:
+// {model: 'Mustang', color: 'black', year: '1995', drive:f, brake:f}
+
+// access properties
+console.log(car.year);
+
+//call methods
+car.drive();
+car.brake();
+
