@@ -410,3 +410,35 @@ function areaRect(width, height) {
     return width * height;
 }
 console.log(areaRect(10, 20));
+
+// TERNARY OPERATOR
+// shortcut for if-else stmt
+// takes 3 operands
+// 1. condition ?
+// 2. expression if true
+// 3. expression if false
+
+// condition ? exprIfTrue : exprIfFalse
+
+//if-else version:
+let adult = checkAgeIfElse(21);
+function checkAgeIfElse(age) {
+    if (age >= 18) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// ternary operator version (much cleaner)
+adult = checkAgeTernaryOp(21); 
+function checkAgeTernaryOp(age) {
+    return age >= 18 ? true : false // condition is age >= 18
+}
+
+checkWinner(false);
+
+// don't necessarily need return
+function checkWinner(won) {
+    won ? console.log("YOU WON!") : console.log("YOU LOST!");
+}
