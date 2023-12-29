@@ -813,3 +813,52 @@ document.getElementById("increaseBtn").onclick = function () {
 } // no need to create 2 new function names! we are preventing clutter in our code by not making top level functions that other things do not use!
 
 
+// ARROW FUNCTION EXPRESSIONS !!! NEW IDEA
+// =>
+// compact alternative to regular functions (just a syntax thing)
+// const myFunc = (args) => returnVal;
+// eg)
+
+const greeting2 = function (userName) {
+    console.log(`hello ${userName}`);
+}
+
+greeting2("six");
+
+// compact alternative to above function expression is:
+const greeting3 = (userName) => console.log(`hello ${userName}`);
+greeting3("six"); // note, no return value, just do a console log!
+
+// another eg:
+const percent = function(x, y) {
+    return x / y * 100;
+}
+
+console.log(`${percent(75, 100)}%`);
+
+// arrow function version:
+const percent2 = (x, y) =>  x / y * 100;
+// remove return statement
+
+// important rmk: arrow functions are inherently anonymous.
+// using a const variable makes their functionality basically identical to named functions
+// but they're still just anonymous functions captured in variables.
+
+// another eg)
+// recall the sorting stuff from before
+grades =  [100, 50 , 90, 80, 70];
+
+// traditional function
+grades.sort(descending);
+function descending(x, y) {
+    return y- x;
+}
+console.log(grades);
+
+// now with function exprs
+grades.sort(function(x, y) {
+    return y-x;
+});
+
+// arrow functions
+grades.sort((x,y) => y-x);
