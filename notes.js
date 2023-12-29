@@ -528,6 +528,28 @@ let arr = ["apple", "orange", "banana"];
 arr.push("lemon"); // add element to end of array
 arr.pop(); // remove element from end of array
 
-// FROM FRONT
+// unshift and shift
 arr.unshift("mango"); // add element to start of array
 arr.shift(); // remove element from start of array
+
+// LOOP THROUGH ARRAYS
+arr = [5, 10, 15, 20];
+// for loop
+for (let i=0; i < arr.length; i++) {
+    console.log(arr[i]);
+}
+
+// for-of loop, like a java for each loop, for (int i : arr) {}
+for (let i of arr) {
+    console.log(i);
+}
+
+// SORTING ARRAYS
+let fruits = ["apple", "orange", "banana", "mango"];
+fruits = fruits.sort(); // sort alphabetically (same as python)
+for (let fruit of fruits) {
+    console.log(fruit);
+}
+
+// for reverse sorting do:
+fruits = fruits.sort().reverse();
