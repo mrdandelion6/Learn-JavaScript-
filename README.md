@@ -10,6 +10,6 @@ Welcome to my JavaScript learning repository! 🚀 This repository is a collecti
 ## Interactive Site
 Explore a simple interactive site I built using basic JavaScript! Check it out [here](https://mrdandelion6.github.io/Learn-JavaScript/). The code for this project can be found in the `increase-decrease` branch of this repository.
 
-Feel free to clone the repository and experiment with the code. If you have any suggestions or find areas for improvement, don't hesitate to open an issue or pull request.
+Feel free to clone the repository and experiment with the code. You could also follow along by using [Node](https://nodejs.org/en) in terminal, for quick and lightweight experimentation (I did this a lot)! If you have any suggestions or find areas for improvement, don't hesitate to open an issue or pull request.
 
 Happy coding.
