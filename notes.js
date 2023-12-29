@@ -736,3 +736,49 @@ function descendingSort(x, y) {
 }                 // the opposite comparison
 // a smaller return value here means x should come after y
 // makes sense
+
+// FUNCTION EXPRESSION !!!! NEW IDEA
+// a function expression is a function without a name
+// known as an anonymous function.
+// benefit: prevents us from polluting the global scope
+// with a bunch of random function names
+// ie; we can write the function then forget about it later
+// assign a variable to some anon function
+
+const greeting = function () {
+    console.log("hello!");
+} // this function can be forgot about if we reassign greeting
+
+// in JavaScript, functions are "first-class citizens"
+// this means they can be treated as values, like objects and primitives etc,
+// for example, a function can be returned from another function!
+// having function expressions allows us to capture some anonymous function in a variable.
+// this enhances dynamic behaviour of code.
+// we can conditionally define/build functions are runtime!
+
+// CLOSURES !!! NEW IDEA
+// a closure is created when a function is defined inside of another function,
+// this allows the inner function to access outer function's variables
+// even after the outer function has finished executing.
+// eg:
+
+function outer() {
+    let outerVariable = "I am from outer";
+
+    function inner() {
+        console.log(outerVariable); // Accessing outerVariable from the closure
+    }
+
+    return inner;
+}
+
+let closureFunction = outer();
+closureFunction(); // Outputs: "I am from outer"
+
+// we see above that the inner function, assigned to closureFunction() has access to a variable
+// in the scope of the outer() function, even though outer() has already finished executing.
+
+// this "functions' retainment of access to the variables in their declared scope"
+// creates a sort of encapsulation for data.
+// this is useful for creating private variables (and maintaining state)
+// across multiple function calls.
