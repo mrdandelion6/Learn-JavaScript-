@@ -521,3 +521,13 @@ console.log(myNum); // formats it to 50%, 1 is 100%
 // units
 myNum = 100;
 myNum = myNum.toLocaleString(undefined, {style: "unit", unit: "celsius"});
+
+// ARRAYS
+let arr = ["apple", "orange", "banana"];
+
+arr.push("lemon"); // add element to end of array
+arr.pop(); // remove element from end of array
+
+// FROM FRONT
+arr.unshift("mango"); // add element to start of array
+arr.shift(); // remove element from start of array
