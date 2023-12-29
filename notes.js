@@ -654,8 +654,17 @@ function displayDOM(output) {
 }
 
 // FOR EACH: arr.forEach()
+// we pass in a callback as an argument into forEach
 let students = ["spongebob", "patrick", "squidward"];
 
-function capitalize(word) {
-    return word.charAt(0).toUpperCase() + word.slice(1);
-}
+// forEach() method automatically provides the three arguments below!
+function capitalize(element,  index, array) {
+    array[index] = element.charAt(0).toUpperCase() + element.slice(1); // capitalize each element in the array
+} // could also use element.substring(1) here, as it behaves same as slice for positive indices.
+
+// call the method on the array and pass in the callback function
+console.log(students);
+students.forEach(capitalize);
+console.log(students);
+// might seem strange but the forEach method automatically passes in the 3 args above into the given callback function.
+
