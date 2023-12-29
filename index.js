@@ -1,13 +1,9 @@
-// FOR EACH: arr.forEach()
-// we pass in a callback as an argument into forEach
-let students = ["spongebob", "patrick", "squidward"];
+numbers = [1, 2, 3, 4, 5];
+let squares = numbers.map(square);
+console.log(squares);
 
-// forEach() method automatically provides the three arguments below!
-function capitalize(element,  index, array) {
-    array[index] = element.charAt(0).toUpperCase() + element.slice(1); // capitalize each element in the array
+function square(elem, i, arr) {
+    console.log(i);
+    console.log(arr);
+    return Math.pow(elem, 2);
 }
-
-// call the method on the array and pass in the callback function
-console.log(students);
-students.forEach(capitalize);
-console.log(students);

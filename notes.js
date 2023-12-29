@@ -668,3 +668,21 @@ students.forEach(capitalize);
 console.log(students);
 // might seem strange but the forEach method automatically passes in the 3 args above into the given callback function.
 
+
+// MAP() METHOD
+// array.map() executes a provided callback function once for each array element
+// and creates a NEW array
+
+numbers = [1, 2, 3, 4, 5];
+let squares = numbers.map(square);
+console.log(squares);
+
+function square(elem) { // note that map() also auto passes 3 same args (elem, index, arr)
+    // we choose to only make use of elem here but we could also have used the other args
+    return Math.pow(elem, 2);
+}
+
+// unlike array.forEach(), array.map() creates a new array and fills it with the return value of the callback function
+// forEach(): mutates
+// map(): creates new
+
