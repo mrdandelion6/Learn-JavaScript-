@@ -553,3 +553,23 @@ for (let fruit of fruits) {
 
 // for reverse sorting do:
 fruits = fruits.sort().reverse();
+
+// SPREAD OPERATOR
+// expands out elements of iterables such as array or string
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+console.log(...numbers); // logs: 1 2 3 4 5 6 7 8 9
+
+username = "six pop"
+console.log(...username); // logs: s i x   p o p
+
+// useful for calling max/min or arrays
+console.log(Math.max(numbers)); // results in NaN because we cant use max([Array])
+console.log(Math.max(...numbers)); // this works!
+
+// can also use for merging arrays
+let class1 = ["Spongebob", "Patrick", "Sandy"];
+let class2 = ["Squidward", "Mr. Krabs", "Plankton"];
+class1.push(class2); // this just creates a nested array! doesn't work
+class1.pop();
+
+class1.push(...class2); // same as class1.extend(class2) from python
