@@ -3,7 +3,7 @@
 // html: content, js: behaviour
 
 // JS in Node
-// To use JS in node, open terminal and simply cd to the directory where the JS file is (fir example say our JS file is index,js).
+// To use JS in node, open terminal and simply cd to the directory where the JS file is (for example say our JS file is index,js).
 // now type "node index.js" and it will run the index.js file using Node.
 
 // VARIABLES
