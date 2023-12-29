@@ -1,13 +1,8 @@
-callbackSum(2, 3, displayConsole);
+// FOR EACH: arr.forEach()
+let students = ["spongebob", "patrick", "squidward"];
 
-function callbackSum(x, y, f) {
-    f(x + y);
+function capitalize(word) {
+    return word.charAt(0).toUpperCase() + word.slice(1);
 }
 
-function displayConsole(output) {
-    console.log(output);   
-}
-
-function displayDOM(output) {
-    document.getElementById("p2").innerHTML = output;
-}
+console.log(capitalize("bob"));

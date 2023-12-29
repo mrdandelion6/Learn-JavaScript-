@@ -652,3 +652,10 @@ function displayConsole(output) {
 function displayDOM(output) {
     document.getElementById("p2").innerHTML = output;
 }
+
+// FOR EACH: arr.forEach()
+let students = ["spongebob", "patrick", "squidward"];
+
+function capitalize(word) {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+}
