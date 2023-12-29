@@ -940,3 +940,54 @@ console.log(car.year);
 car.drive();
 car.brake();
 
+// "THIS" KEYWORD
+// used to  refer to a particular object; depends on the immediate context
+
+
+// two objects!
+const car1 = {
+    model: "Mustang",
+    color: "black",
+    year: "1995",
+
+    drive : function () {
+        console.log(`you drive ${this.model}`);
+    }, 
+
+    brake : function () {
+        console.log("skiddd");
+    },
+
+    thisTest : function () {
+        console.log(this);
+    }
+}
+
+const car2 = {
+    model: "mini cooper",
+    color: "lime",
+    year: "2001",
+
+    drive : function () {
+        console.log(`you drive ${this.model}`); // refer to property with this.property!
+    }, 
+
+    brake : function () {
+        console.log("skdd");
+    }
+}
+
+car1.drive();
+car2.drive();
+
+// this depends on the context
+// within an object, the context is the object itself
+car1.thisTest();
+// logs the object, same as if we did console.log(car1);
+
+// outside of any objects, our context is a Window object!
+console.log(this);
+// {window: Window, self: Window, document: document, name: '', location: Location, …}
+// we can use this to edit window properties! eg)
+// this.name = "cool";
+
