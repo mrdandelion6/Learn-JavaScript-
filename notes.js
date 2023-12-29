@@ -442,3 +442,82 @@ checkWinner(false);
 function checkWinner(won) {
     won ? console.log("YOU WON!") : console.log("YOU LOST!");
 }
+
+// TEMPLATE LITERALS
+// basically .f format string in python
+// denoted by `
+// allow for embedded variables and expressions
+
+// consider this code
+let userName = "Bro";
+let items = 3;
+let total = 75;
+
+console.log("Hello", userName);
+console.log("You have", items, "items in your cart");
+console.log("Your total is $", total);
+
+// template literal version
+console.log(`Hello ${userName}`);
+console.log(`You have ${items} in your cart`);
+console.log(`Your total is $${total}`);
+
+// can also stretch a template literal to multiple lines unlike strings
+// each line break in the template literal is counded as a line break when logged
+let text =
+`Hello ${userName}
+You have ${items} items in your cart
+Your total is $${total}`
+console.log(text);
+// really useful for updating html element with several lines, eg:
+text =
+`Hello ${userName}<br>
+You have ${items} items in your cart<br>
+Your total is $${total}<br>`;
+console.log(text); // we end up seeing <br> in the console log
+// needed <br> for the HTML below
+
+document.getElementById("p1").innerHTML = text; // change innerHTML of paragraph
+
+// FORMATTING NUMBERS AS CURRENCY
+// toLocaleString()
+// number.toLocaleString(locale, {options});
+
+// 'locale' = specify the language (passing in undefined uses the default language set by your browser)
+// 'options' = object with formatting options
+
+let myNum = 123456.789
+myNum = myNum.toLocaleString("en-US"); // US english
+console.log(myNum); // formats to 123,456.789
+
+myNum = 123456.789
+myNum = myNum.toLocaleString("hi-IN");  // hindi
+console.log(myNum); // formats to 1,23,456.789
+
+myNum = 123456.789
+myNum = myNum.toLocaleString("de-DE");  // german
+console.log(myNum);
+
+//currencies
+
+//USD
+myNum = 123456.789
+myNum = myNum.toLocaleString("en-US", {style: "currency", currency: "USD"});
+console.log(myNum);
+// rupees
+myNum = 123456.789
+myNum = myNum.toLocaleString("hi-IN", {style: "currency", currency: "INR"});
+console.log(myNum);
+// euros
+myNum = 123456.789
+myNum = myNum.toLocaleString("de-DE", {style: "currency", currency: "EUR"});
+console.log(myNum);
+
+// percentages
+myNum = 0.5;
+myNum = myNum.toLocaleString(undefined, {style: "percent"});
+console.log(myNum); // formats it to 50%, 1 is 100%
+
+// units
+myNum = 100;
+myNum = myNum.toLocaleString(undefined, {style: "unit", unit: "celsius"});

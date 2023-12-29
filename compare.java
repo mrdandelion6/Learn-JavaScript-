@@ -8,4 +8,5 @@ public class compare {
         }
         // System.out.println(x); cant access x outside of loop
     }
+
 }
