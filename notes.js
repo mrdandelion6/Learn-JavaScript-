@@ -991,3 +991,43 @@ console.log(this);
 // we can use this to edit window properties! eg)
 // this.name = "cool";
 
+// CLASSES
+// class is a blueprint for creating objects!
+// typically have constructors (we will get to this later)
+// similiar concepts to java
+
+class Player {
+    // properties
+    score = 0;
+
+    // methods
+    pause() {
+        console.log("you paused");
+    }
+    exit() {
+        console.log("you exited");
+    }
+}
+
+// must use new keyword to create a new object instance of a class
+const player1 = new Player();
+const player2 = new Player();
+
+// CONSTRUCTORS
+// special method to accept arguments and assign properties
+// constructor()
+class Student {
+    constructor(name, age, gpa) {
+        this.name = name;
+        this.age = age;
+        this.gpa = gpa;
+    }
+    
+    study() {
+        console.log(`${this.name} is studying!`);
+    }
+}
+
+const stud1 = new Student("spongebob", 19, 4.0);
+console.log(stud1.gpa);
+
