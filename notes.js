@@ -699,7 +699,7 @@ function isEven(elem) {
 console.log(evens);
 
 // REDUCE() METHOD
-// array.reduce() reduces an array to a single value
+// array.reduce(f) reduces an array to a single value. f is a callback.
 // a good example of reduce() method is to sum up all the values of an array
 let prices = [5, 10, 15, 20, 25];
 let totalPrice = prices.reduce(checkOut);
@@ -750,11 +750,11 @@ const greeting = function () {
 } // this function can be forgot about if we reassign greeting
 
 // in JavaScript, functions are "first-class citizens"
-// this means they can be treated as values, like objects and primitives etc,
+// this means they can be treated as reference type values like objects,
 // for example, a function can be returned from another function!
 // having function expressions allows us to capture some anonymous function in a variable.
 // this enhances dynamic behaviour of code.
-// we can conditionally define/build functions are runtime!
+// we can conditionally define/build functions at runtime!
 
 // CLOSURES !!! NEW IDEA
 // a closure is created when a function is defined inside of another function,
@@ -778,7 +778,38 @@ closureFunction(); // Outputs: "I am from outer"
 // we see above that the inner function, assigned to closureFunction() has access to a variable
 // in the scope of the outer() function, even though outer() has already finished executing.
 
-// this "functions' retainment of access to the variables in their declared scope"
-// creates a sort of encapsulation for data.
-// this is useful for creating private variables (and maintaining state)
-// across multiple function calls.
+// this "functions' retainment of access to the variables in their declared scope" creates a sort of encapsulation for data.
+// this is useful for creating private variables (and maintaining state) across multiple function calls.
+
+// Function expressions continued:
+
+// old way of inc/dec button before using function expressions:
+let count = 0;
+document.getElementById("decreaseBtn").onclick = decreaseCount;
+document.getElementById("increaseBtn").onclick = increaseCount;
+// note, assign functions without (), or else we end up calling  them!
+
+// we make two top level functions solely for the buttons
+function increaseCount() {
+    count += 1;
+    document.getElementById("counterLabel").innerHTML = count;
+}
+
+function decreaseCount() {
+    count -= 1;
+    document.getElementById("counterLabel").innerHTML = count;
+}
+
+
+// new way with function exprs:
+count = 0;
+document.getElementById("decreaseBtn").onclick = function () {
+    count -= 1;
+    document.getElementById("counterLabel").innerHTML = count;
+}
+document.getElementById("increaseBtn").onclick = function () {
+    count += 1;
+    document.getElementById("counterLabel").innerHTML = count;
+} // no need to create 2 new function names! we are preventing clutter in our code by not making top level functions that other things do not use!
+
+

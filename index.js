@@ -1,5 +1,10 @@
-const greeting = function () {
-    console.log("hello!");
+// new way with func expr
+let count = 0;
+document.getElementById("decreaseBtn").onclick = function () {
+    count -= 1;
+    document.getElementById("counterLabel").innerHTML = count;
 }
-
-greeting();
+document.getElementById("increaseBtn").onclick = function () {
+    count += 1;
+    document.getElementById("counterLabel").innerHTML = count;
+}
