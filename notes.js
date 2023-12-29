@@ -616,3 +616,39 @@ function sumMix(x, y, ...nums) { // ie) minimum args is 2
 }
 // when doing this make sure that the rest parameter is always the last parameter
 
+// CALLBACK
+// a function passed as an argument to another function
+// benefit: we can decide at runtime which function to call in a simple way
+
+// useful example
+let tot = newSum(2, 3);
+displayConsole(tot);
+displayDOM(tot);
+
+function newSum(x, y) {
+    let result = x + y;
+    return result;
+}
+
+function displayConsole(output) {
+    console.log(output);   
+}
+
+function displayDOM(output) {
+    document.getElementById("p2").innerHTML = output;
+}
+
+// can write the above with a callback instead:
+callbackSum(2, 3, displayConsole); // could easily swap for displayDOM
+
+function callbackSum(x, y, f) {
+    f(x + y);
+}
+
+function displayConsole(output) {
+    console.log(output);   
+}
+
+function displayDOM(output) {
+    document.getElementById("p2").innerHTML = output;
+}
