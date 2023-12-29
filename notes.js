@@ -669,7 +669,7 @@ console.log(students);
 // might seem strange but the forEach method automatically passes in the 3 args above into the given callback function.
 
 
-// MAP() METHOD
+// ARRAY.MAP() METHOD
 // array.map() executes a provided callback function once for each array element
 // and creates a NEW array
 
@@ -862,3 +862,45 @@ grades.sort(function(x, y) {
 
 // arrow functions
 grades.sort((x,y) => y-x);
+
+// MAPS
+// key value pairs object
+// need to use new for calling map constructor unlike arrays.
+const store = new Map([
+    ["t-shirt", 20], // subarrays within an array passed as an arg into Map()
+    ["shorts", 15], // each subarray is a key value pair
+    ["jeans", 30],
+    ["socks", 5],
+    ["underwear", 150],
+]);
+
+// Map.forEach(f) auto passes value, key args into the callback
+store.forEach((value, key) => console.log(`${key} costs $${value}`));
+
+// note that arrays could also be made using an Array() constrcutor
+
+// both of these are same:
+// let arr = [1, 2, 3];
+// let arr = new Array(1, 2, 3);
+
+// this is also same (Array constructor doesnt need new)
+// let arr = Array(1, 2, 3); 
+// note that map constructor needs new, ie; cannot do let mapo = Map([["yo", 1], ["bro", 32]]);
+
+// get() method: Map.get(key)
+console.log(store.get("underwear")); // logs 150
+
+// set() method: Map.set(key, value);
+store.set("hat", 1);
+console.log(store);
+
+// delete() method: Map.delete(key);
+store.delete("underwear"); // NOOO
+console.log(store);
+
+// has() method: Map.has(key)
+console.log(store.has("underwear")); // false now :(
+
+// Map.size property
+console.log(store.size);
+
