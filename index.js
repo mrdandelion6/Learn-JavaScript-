@@ -1,9 +1,8 @@
-numbers = [1, 2, 3, 4, 5];
-let squares = numbers.map(square);
-console.log(squares);
+arr = [1, 2, 3, 4, 5, 6, 7, 8];
+evens = arr.filter(isEven);
 
-function square(elem, i, arr) {
-    console.log(i);
-    console.log(arr);
-    return Math.pow(elem, 2);
+function isEven(elem) {
+    return !Boolean(elem % 2);
 }
+
+console.log(evens);

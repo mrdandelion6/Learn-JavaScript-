@@ -686,3 +686,14 @@ function square(elem) { // note that map() also auto passes 3 same args (elem, i
 // forEach(): mutates
 // map(): creates new
 
+// FILTER() METHOD
+// array.filter() creates a new array with elements that pass a condition provided by a callback function
+
+arr = [1, 2, 3, 4, 5, 6, 7, 8];
+evens = arr.filter(isEven);
+
+function isEven(elem) {
+    return !Boolean(elem % 2);
+}
+
+console.log(evens);
