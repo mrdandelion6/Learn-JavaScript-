@@ -1210,3 +1210,4 @@ let car10 = new Car(400);
 console.log(car10.power);
 
 // TEST1
+// test2
