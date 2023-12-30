@@ -1,28 +1,40 @@
-class Car {
-    // use static keyword
-    static numOfCars = 0;
+class Animal {
+    alive = true;
 
-    constructor(model) {
-        this.model = model;
-        Car.numOfCars ++; // refer to it using Class.property, not this.property,
-        // that is, Car.numOfCars and not this.numOfCars
+    eat() {
+        console.log(`${this.name} is eating`);
     }
-
-    // static method, same idea
-    static startRace() {
-        console.log("3.. 2.. 1.. GO!");
+    sleep() {
+        console.log(`${this.name} is sleeping`);
     }
 }
 
-car1 = new Car("honda");
-car2 = new Car("ferrari");
-let car3 = new Car("toyota");
-let car4 = new Car("nissan");
+class goodRabbit extends Animal {
+    name = "rabbit";
 
-// access the static variable directly from class
-// cannot invoke it from a specific instance
-console.log(Car.numOfCars);
+    run() {
+        console.log`${this.name} is running`;
+    }
+}
+class goodFish extends Animal {
+    name = "fish";
 
-// call static method directly from class
-// cannot invoke it from a specific instance
-Car.startRace();
+    swim() {
+        console.log`${this.name} is swimming`;
+    }
+}
+class goodHawk extends Animal {
+    name = "hawk";
+
+    fly() {
+        console.log`${this.name} is flying`;
+    }
+}
+
+const rabbit = new goodRabbit();
+const fish = new goodFish();
+const hawk = new goodHawk();
+
+console.log(rabbit.alive);
+console.log(rabbit.eat());
+console.log(fish.sleep());

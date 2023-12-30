@@ -1062,3 +1062,94 @@ console.log(Car.numOfCars);
 // call static method directly from class
 // cannot invoke it from a specific instance
 Car.startRace();
+
+// INHERITANCE
+// child classes and parent classes
+
+class Rabbit {
+    alive = true;
+    name = "rabbit";
+
+    eat() {
+        console.log(`${this.name} is eating`);
+    }
+    sleep() {
+        console.log(`${this.name} is sleeping`);
+    }
+    run() {
+        console.log(`${this.name} is running`);
+    }
+}
+class Fish {
+    alive = true;
+    name = "rabbit";
+
+    eat() {
+        console.log(`${this.name} is eating`);
+    }
+    sleep() {
+        console.log(`${this.name} is sleeping`);
+    }
+    swim() {
+        console.log(`${this.name} is swimming`);
+    }
+}
+class Hawk {
+    alive = true;
+    name = "rabbit";
+
+    eat() {
+        console.log(`${this.name} is eating`);
+    }
+    sleep() {
+        console.log(`${this.name} is sleeping`);
+    }
+    fly() {
+        console.log(`${this.name} is flying`);
+    }
+}
+
+// factor out all these classes from a parent class Animal
+
+class Animal {
+    alive = true;
+
+    eat() {
+        console.log(`${this.name} is eating`);
+    }
+    sleep() {
+        console.log(`${this.name} is sleeping`);
+    }
+}
+
+class goodRabbit extends Animal {
+    name = "rabbit";
+
+    run() {
+        console.log`${this.name} is running`;
+    }
+}
+class goodFish extends Animal {
+    name = "fish";
+
+    swim() {
+        console.log`${this.name} is swimming`;
+    }
+}
+class goodHawk extends Animal {
+    name = "hawk";
+
+    fly() {
+        console.log`${this.name} is flying`;
+    }
+}
+
+const rabbit = new goodRabbit();
+const fish = new goodFish();
+const hawk = new goodHawk();
+
+console.log(rabbit.alive);
+console.log(rabbit.eat());
+console.log(fish.sleep());
+// same as python, java, etc.
+
