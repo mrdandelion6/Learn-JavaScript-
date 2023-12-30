@@ -1509,4 +1509,63 @@ console.timeEnd("response time"); // prints time elapsed
 
 // of course, we don't wait for asynch code (it's asynchronous! we skip ahead)
 
+// PROMISES !!! NEW IDEA
+// promises are objects that encapsulate the result of an asynchrnous operation
+// this enables asynchronous methods to return values like synchronous methods
+// "i promise to return something in the future"
 
+// within promise constructor, we put a callback, arrow function, or function expression
+// loading a file is an asynchronous process
+
+// promises have a STATE.
+// the state is first 'pending', then it can either be 'fulfilled' or 'rejected'.
+// the return value is known as the RESULT
+
+// reject and resolve are functions associated with Promise object.
+// resolve() is used to fulfill a promise with a resolved  value
+
+// promises have 2 parts: producing and consuming:
+
+// producing part:
+const promise = new Promise((resolve, reject) => {
+    // asynch code goes here
+    let fileLoaded = true; // assume we invoked a file load asynchronously here
+    
+    if(fileLoaded) {
+        resolve("file loaded"); // consuming code handles this!
+    } else {
+        reject("file not loaded");
+    }
+});
+
+
+// the resolved value can be accessed through the .then() method when the promise is resolved
+// Promise.then(f), "if our promise is resolved, then we do this"
+promise.then(value => console.log(value))
+       .catch(error => console.log(error));
+
+// we must catch any reject() calls using promise.catch();
+// we can just trail it like thise promise.then().catch();
+
+// we don't even need a reject(), we can make promises without them
+// we can make a proise without a reject!
+const promise2 = new Promise(resolve => {
+    // asynch code goes here
+    setTimeout(resolve, 5000);
+});
+
+promise2.then(() => console.log("thanks for waiting!"));
+
+// we can also create a function to return promises based on given args
+const wait = time => new Promise(resolve => { // wait is now a FUNCTION that RETURNS a promise object
+    // asynch code goes here
+    setTimeout(resolve, time);
+});
+
+wait(4000).then(() => console.log("thanks for waiting!"));
+
+// p = new Promise(f)
+// f(resolve, reject) {good: resolve(), bad: reject()}
+// p.then(g).catch(h)
+// g(args) {code if resolved}
+// h(args) {code if rejeceted}

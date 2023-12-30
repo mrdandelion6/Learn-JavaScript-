@@ -1,11 +1,7 @@
-//start
-console.time("response time");
+// we can pass arguments into promises as well.
+const wait = time => new Promise(resolve => { // wait is now a FUNCTION that RETURNS a promise object
+    // asynch code goes here
+    setTimeout(resolve, time);
+});
 
-alert("CLICK OK");
-setTimeout(() => console.log("hello"), 10000);
-
-// end
-console.timeEnd("response time"); // prints time elapsed
-
-// of course, we don't wait for asynch code (it's asynchronous! we skip ahead)
-
+wait(4000).then(() => console.log("thanks for waiting!"));
