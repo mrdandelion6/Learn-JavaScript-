@@ -3,7 +3,7 @@
 // html: content, js: behaviour
 
 // JS in Node
-// To use JS in node, open terminal and simply cd to the directory where the JS file is (fir example say our JS file is index,js).
+// To use JS in node, open terminal and simply cd to the directory where the JS file is (for example say our JS file is index,js).
 // now type "node index.js" and it will run the index.js file using Node.
 
 // VARIABLES
@@ -38,11 +38,15 @@ if (lastName = undefined) {
 // dynamic language: variable types can change
 // JS is a dynamic language.
 
-// null is a typeof object
+// null is a type of object as well as a value
+// undefined is also a type of object as well as a value
 
 // OBJECTS
-// objects are reference type
-// arrays and functions are also reference types
+// objects are reference type.
+// arrays and functions are also reference types.
+// note: why do functions have a type??
+// haha clever guy, skipping ahead? functions are treated as "first-class citizens" in JavaScript.
+// in other words, they are also treated as values! you can see more at line 756.
 
 let person = {}; //object literal
 person = {
@@ -58,16 +62,16 @@ person.name = 'six';
 // bracket notation
 person['name'] = 'sixpop';
 
-// we nomrally use dot notation, and only really use bracket notation if the property name could vary at runtime
-// eg if the users choose the property name, then we can have a variable for the property name:
+// we nomrally use dot notation, and only really use bracket notation if the property name could vary at runtime.
+// eg; if the users choose the property name, then we can have a variable for the property name:
 
 let selection = 'name'; // x may vary at runtime
 person[selection] = 'six';
 
 // ARRAYS
-let selectedColors =['red', 'blue']; // array literaly, same as python
+let selectedColors =['red', 'blue']; // arrays syntax literally (almost) same as python
 x = selectedColors[0]; // same indexing as python
-// main difference is we do not get any indexing errors. empty indices are just undefined
+// however, we do not get any indexing errors. empty indices are just undefined
 // moreover, we can have gaps in the list. eg) [ 'red', 'blue', 'green', <2 empty items>, 'orange' ]
 
 selectedColors[2] = 'green';
