@@ -1187,3 +1187,22 @@ class Hawk extends Animal {
 // if we dont call the super method to invoke the parent's constructor we end up getting an error!
 // must call super constructor in child class before accessing 'this'
 
+// GETTERS & SETTERS
+// get binds an object property to a function when that property is accessed
+// eg;
+
+class Car {
+    constructor(power) {
+        this.power = power;
+    }
+
+    get power () {
+        return this.power;
+    }
+}
+
+let car10 = new Car(400);
+// getters help us with getting a property in a desired format or representation
+console.log(car10.power);
+
+
