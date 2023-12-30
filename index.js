@@ -1,18 +1,24 @@
-try {
-    let x = window.prompt("enter a number");
-    x = Number(x); // wont catch this if we put in something like "Pizza"
 
-    if (isNaN(x)) throw "That wasn't a number!";
-    if (x == "") throw "That was empty!";
+item = "chocolat";
+price = 10000;
 
+let timer1 = setTimeout(firstMsg, 4000, item, price); // returns an ID
+let timer2 = setTimeout(secondMsg, 2000);
+let timer3 = setTimeout(thirdMsg, 6000);
 
-    console.log(`${x} is a number!`);
-} 
-
-catch(error) {
-    console.log(error);
+function firstMsg(item, price) {
+    alert(`BUY A ${item} BAR FOR $${price}`);
+}
+function secondMsg() {
+    alert(`pls NO scam`);
+}
+function thirdMsg() {
+    alert(`WHY DID U REDEEM IT`);
 }
 
-finally {
-    console.log("this always executes");
+document.getElementById("BUYcourse").onclick = function () {
+    clearTimeout(timer1);
+    clearTimeout(timer2);
+    clearTimeout(timer3);
+    alert("thx for buying <33")
 }

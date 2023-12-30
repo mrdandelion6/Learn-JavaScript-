@@ -1321,6 +1321,8 @@ console.log(cards[0].value, cards[0].suit);
 // user types incorrect input
 // TypeError
 
+// same as java
+
 // use try and catch block!
 
 try {
@@ -1350,3 +1352,55 @@ finally { // this block always executes at the end of try-catch stuff
     console.log("this always executes");
 }
 // useful for stuff like closing files at the end
+
+// SETTIMEOUT() METHOD
+// setTimeout(f, t) invokes a callback f and t milliseconds
+// doesn't pause the execution of the code! it is asynchronous
+
+let timer1 = setTimeout(firstMsg, 4000); // returns an ID
+let timer2 = setTimeout(secondMsg, 2000);
+let timer3 = setTimeout(thirdMsg, 6000);
+
+function firstMsg() {
+    alert(`BUY A CHOCOLATE BAR FOR $10,000`);
+}
+function secondMsg() {
+    alert(`pls NO scam`);
+}
+function thirdMsg() {
+    alert(`WHY DID U REDEEM IT`);
+}
+
+// to cancel our clear setTimeout() we can use clearTimeout()
+// linking to a button in html doc
+document.getElementById("BUYcourse").onclick = function () {
+    clearTimeout(timer1);
+    clearTimeout(timer2);
+    clearTimeout(timer3);
+    alert("thx for buying <33")
+}
+
+// you can pass args into the callback through setTimeout(f, t, ...args) by listing those args after the t.
+item = "chocolat";
+price = 10000;
+
+timer1 = setTimeout(firstMsg, 4000, item, price); // returns an ID
+timer2 = setTimeout(secondMsg, 2000);
+timer3 = setTimeout(thirdMsg, 6000);
+
+function firstMsg(item, price) {
+    alert(`BUY A ${item} BAR FOR $${price}`);
+}
+function secondMsg() {
+    alert(`pls NO scam`);
+}
+function thirdMsg() {
+    alert(`WHY DID U REDEEM IT`);
+}
+
+document.getElementById("BUYcourse").onclick = function () {
+    clearTimeout(timer1);
+    clearTimeout(timer2);
+    clearTimeout(timer3);
+    alert("thx for buying <33")
+}
