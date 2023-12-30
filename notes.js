@@ -1269,6 +1269,7 @@ console.log(car11.gas);
 // just get used to it!
 
 // ANONYMOUS OBJECTS
+// simple
 // objects that dont have a name and are not directly referenced.
 // pros: less syntax, no need for unique names
 // cons: do not have direct access
@@ -1310,3 +1311,42 @@ new Card("2", "Clubs")]
 // simple
 console.log(cards[0].value, cards[0].suit);
 
+// ERROR HANDLING
+// errors themselves are objects as well!
+// they are objects awith a description of something that went wrong
+
+// eg:
+// cant open a file
+// lost connection
+// user types incorrect input
+// TypeError
+
+// use try and catch block!
+
+try {
+    console.lag();
+} catch(error) {
+    console.log(error);
+}
+
+// sometimes stuff goes wrong but generates no error
+
+try {
+    let x = window.prompt("enter a number");
+    x = Number(x); // wont catch this if we put in something like "Pizza"
+
+    if (isNaN(x)) throw "That wasn't a number!";
+    if (x == "") throw "That was empty!";
+
+
+    console.log(`${x} is a number!`);
+} 
+
+catch(error) {
+    console.log(error);
+}
+
+finally { // this block always executes at the end of try-catch stuff
+    console.log("this always executes");
+}
+// useful for stuff like closing files at the end
