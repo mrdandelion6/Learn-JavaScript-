@@ -1569,3 +1569,94 @@ wait(4000).then(() => console.log("thanks for waiting!"));
 // p.then(g).catch(h)
 // g(args) {code if resolved}
 // h(args) {code if rejeceted}
+
+// ASYNC KEYWORD
+// async makes a function return a promise
+
+const promis = new Promise((resolve, reject) => {
+    let fileLoaded = true;
+
+    if (fileLoaded) {
+        resolve("file was loaded"); // returns this value as resolved
+    } else {
+        reject("file was not loaded"); // throws this value as reason for an error
+    }
+});
+
+promis.then(val => console.log(val))
+      .catch(err => console.log(err));
+
+
+// easier way of writing the arrow function argument f in new Promise(f), is to write an async function!
+async function loadFile() {
+    let fileLoaded = true;
+
+    if (fileLoaded) {
+        return "file was loaded"; // returns this value as resolved
+    } else {
+        throw "file was not loaded"; // throws this value as reason for an error
+    }
+}
+
+// then we simply don't need to make a promise object
+// since we put the async keyword on loadFile(), it returns a promise
+// a return value would be considered the resolved value.
+// and a thrown error would be considered the reject error.
+
+loadFile().then(val => console.log(val))
+     .catch(err => console.log(err));
+    
+
+// AWAIT KEYWORD
+// await makes an async function wait for a Promise
+
+async function loadFile() {
+    let fileLoaded = true;
+
+    if (fileLoaded) {
+        return "file was loaded";
+    } else {
+        throw "file was not loaded"; 
+    }
+}
+
+// alternative to writing these two lines of code is using await
+loadFile().then(val => console.log(val))
+     .catch(err => console.log(err));
+    
+// using await:
+let msg = await loadFile();
+console.log(msg);
+// this gives an error because we need to place it within another async function
+// so we can do this:
+async function startProcess() {
+    let msg = await loadFile();
+    console.log(msg);    
+}
+
+startProcess();
+
+// we should have a try-catch block within startProcess for handling the thrown error
+// at this point it seems cumbersome to do it with await but perhaps preferable over doing it with .then() and .catch() somehow.
+// ANSWER: the point of doing it like this is useful if we are waiting for more than one asynchronous function
+// we can have several async function results factored out into one single async function
+async function loadFile() {
+    let fileLoaded = false;
+
+    if (fileLoaded) {
+        return "file was loaded";
+    } else {
+        throw "file was not loaded"; 
+    }
+}
+    
+async function startProcess() {
+    try {
+        let msg = await loadFile();
+        console.log(msg);    
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+startProcess();
