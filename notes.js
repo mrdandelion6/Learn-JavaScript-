@@ -1474,3 +1474,39 @@ function formatDate(date) {
 
 date = new Date();
 document.getElementById("dateLab").innerHTML = formatDate(date);
+
+// ASYNCHRONOUS VS SYNCHRONOUS CODE
+
+// synch: in  ordered sequence
+// step by step linear instructions
+// most code
+
+// asynch: out of sequence
+// start now, finish sometime later
+// eg) accessing database
+
+// synch example:
+console.log("START");
+console.log("synchronous step");
+console.log("END");
+
+// asynch example:
+console.log("START");
+setTimeout( () => console.log("asynchronous step"), 5000);
+console.log("END");
+
+// console.time() method
+// start a timer you can use to track how each long an operation takes
+
+//start
+console.time("response time");
+
+alert("CLICK OK");
+setTimeout(() => console.log("hello"), 10000);
+
+// end
+console.timeEnd("response time"); // prints time elapsed
+
+// of course, we don't wait for asynch code (it's asynchronous! we skip ahead)
+
+
