@@ -1153,3 +1153,37 @@ console.log(rabbit.eat());
 console.log(fish.sleep());
 // same as python, java, etc.
 
+// SUPER() CONSTRUCTOR
+// refers to parent class when using inheritance
+// commonly used to invoke parent class' constructor
+
+class Animal {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+}
+
+
+
+class Rabbit extends Animal {
+    constructor(name, age, runSpeed) {
+        super(name, age); // must call super() constructor! same as java
+        this.runSpeed = runSpeed;
+    }
+}
+class Fish extends Animal {
+    constructor(name, age, swimSpeed) {
+        super(name, age);
+        this.swimSpeed = swimSpeed;
+    }
+}
+class Hawk extends Animal {
+    constructor(name, age, flySpeed) {
+        super(name, age);
+        this.flySpeed = flySpeed;
+    }
+}
+// if we dont call the super method to invoke the parent's constructor we end up getting an error!
+// must call super constructor in child class before accessing 'this'
+
