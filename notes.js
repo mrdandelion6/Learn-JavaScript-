@@ -1660,3 +1660,29 @@ async function startProcess() {
 }
 
 startProcess();
+
+// ES6 MODULES
+// a module is a file of reusable code we can import.
+// great for general utility values and functions.
+// helps to make our code more reusable and maintainable.
+// modules are like separate chapters of a book.
+
+// in your HTML make sure to put type="module" for your script
+
+// for everything u want to be exportable in some file, preceed it with export
+// see modules/math_util.js for example!
+
+// you can import stuff like this:
+import {PI, getCircumference, getArea} from "./modules/math_util.js"
+// do import{methods/vars/classes} from "path"
+
+console.log(PI);
+
+// instead of doing individual imports, we can import * as Nickname:
+
+// nickname should be descriptive, we can choose anything
+import * as MathUtil from "./modules/math_util.js"
+// do import{methods/vars/classes} from "path"
+
+console.log(MathUtil.PI);
+// must preceed all stuff with nickname.
