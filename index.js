@@ -1,40 +1,36 @@
-class Animal {
-    alive = true;
 
-    eat() {
-        console.log(`${this.name} is eating`);
+class Car {
+    constructor(power) {
+        this._power = power; 
+        this._gas = 25;
     }
-    sleep() {
-        console.log(`${this.name} is sleeping`);
+
+    get power() { 
+        return `${this._power}hp`;
     }
-}
-
-class goodRabbit extends Animal {
-    name = "rabbit";
-
-    run() {
-        console.log`${this.name} is running`;
+    get gas() { 
+        return `${this._gas}L (${this._gas / 50 * 100}%)`;
     }
-}
-class goodFish extends Animal {
-    name = "fish";
 
-    swim() {
-        console.log`${this.name} is swimming`;
-    }
-}
-class goodHawk extends Animal {
-    name = "hawk";
-
-    fly() {
-        console.log`${this.name} is flying`;
+    // note setters must have EXACTLY one parameter
+    set gas(value) {
+        if (value > 50) {
+            value = 50;
+        } else if (value < 0) {
+            value = 0;
+        }
+        this._gas = value;
     }
 }
 
-const rabbit = new goodRabbit();
-const fish = new goodFish();
-const hawk = new goodHawk();
+let car11 = new Car(500);
+console.log(car11.gas);
 
-console.log(rabbit.alive);
-console.log(rabbit.eat());
-console.log(fish.sleep());
+car11.gas = 40;
+console.log(car11.gas);
+
+car11.gas = 100;
+console.log(car11.gas);
+
+car11.gas = -30;
+console.log(car11.gas);

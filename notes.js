@@ -1193,21 +1193,78 @@ class Hawk extends Animal {
 
 // GETTERS & SETTERS
 // get binds an object property to a function when that property is accessed
+
+// format is 
+// get property() {return stuff}
+// where property is NOT the EXACT name of the property to get!!
+// common convention is to have the actual property name preceded with an underscore, denoting that it is private
 // eg;
 
 class Car {
     constructor(power) {
-        this.power = power;
+        this._power = power; // underscored property _power !
+        this._gas = 25;
     }
 
-    get power () {
-        return this.power;
+    get power() { // method name is not _power() but rather power() !
+        return `${this._power} hp`;
+    }
+    get gas() { // method name is not _power() but rather power() !
+        return `${this._gas} L`;
+    }
+} // suppose our property's name was also power (no underscore), then we would run into an error
+// this is because as i said before, the getter method must have a different name from the property we are getting!
+
+let car10 = new Car(400);
+// getters help us with getting a property in a desired format or representation, like how we added hp
+
+console.log(car10.power); // note we just type object.power as if it is a property! we do not do object.power() unlike java.
+// note that power does not have a setter hence it is not writeable
+// eg:
+car10.power = 500; // this does nothing 
+// we could do this however,
+car10._power = 500; // but clients swear a pledge to not do this, (pls don't!!!)
+
+// setters
+// binds an object property to a method
+
+class Car {
+    constructor(power) {
+        this._power = power; 
+        this._gas = 25;
+    }
+
+    get power() { 
+        return `${this._power}hp`;
+    }
+    get gas() { 
+        return `${this._gas}L (${this._gas / 50 * 100}%)`;
+    }
+
+    // note setters must have EXACTLY one parameter
+    set gas(value) {
+        if (value > 50) {
+            value = 50;
+        } else if (value < 0) {
+            value = 0;
+        }
+        this._gas = value;
     }
 }
 
-let car10 = new Car(400);
-// getters help us with getting a property in a desired format or representation
-console.log(car10.power);
+let car11 = new Car(500);
+console.log(car11.gas);
 
-// TEST1
-// test2
+car11.gas = 40;
+console.log(car11.gas);
+
+car11.gas = 100;
+console.log(car11.gas);
+
+car11.gas = -30;
+console.log(car11.gas);
+
+// might seem a bit odd since we are essentially considering property manipulation as direct setting and getting
+// as opposed to java or python where we would explicitly use object.setProperty().
+// just get used to it!
+
