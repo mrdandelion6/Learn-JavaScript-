@@ -1686,3 +1686,90 @@ import * as MathUtil from "./modules/math_util.js"
 
 console.log(MathUtil.PI);
 // must preceed all stuff with nickname.
+
+// DOM!!!
+// Document Object Model (API)
+// an interface used to change content of page
+
+// our DOM is a hierarchical representation of an HTML document:
+// =============================================================
+    // document
+        // html (root element)
+            // head (element)
+                // title (element)
+                    // (text) "my title"
+            // body (element)
+                // h1 (element)
+                    // (text) "a heading"
+                // a (element) -> attribute: href
+                    // (text) "link text"
+// =============================================================
+
+// document is the entry point of our DOM
+console.dir(document); // dir(document) displays all the properties of the dom
+document.body.style.backgroundColor = "skyblue";
+// change background color!
+
+// ways to select elements in a webpage!! 
+
+// by ID
+let elem = document.getElementById("menuTitle");
+elem.style.backgroundColor = "lightgreen";
+
+// by NAME (several elements)
+cards = document.getElementsByName("card");
+// creates a node list of all the buttons, like an array
+
+setInterval(checkSelected, 2000);
+
+function checkSelected() {
+    // go through cards list (list of radio buttons)
+    // and print the id of a checked radio button
+    cards.forEach(card => {
+        if (card.checked) {
+            console.log(card.id);
+        }
+    })
+}
+
+
+// by TAGNAME
+let veggies = document.getElementsByTagName("li");
+// returns an HTML collection which behaves similarly to an array
+
+veggies[1].style.backgroundColor = "lightgreen";
+
+// by CLASSNAME
+let deserts = document.getElementsByClassName("deserts");
+// returns an array-like object
+
+deserts[0].style.backgroundColor = "lightgreen";
+
+// QUERY SELECTORS
+// a popular way to select elements
+// we can select element by an ID, classname, tag, or an attribute
+
+let element = document.querySelector("#menuTitle"); // ID example
+element.style.backgroundColor = "lightgreen";
+
+element = document.querySelector(".deserts"); // class example
+element.style.backgroundColor = "lightgreen";
+// only selects the first element if there are several with same class
+
+element = document.querySelector("li"); // tag example
+element.style.backgroundColor = "lightgreen";
+// only selects the first element if there are several with same tag
+
+element = document.querySelector("[for]"); // attribute example
+element.style.backgroundColor = "lightgreen";
+// only selects the first element if there are several with same attribute
+
+// to select all elements, we can use querySelectorAll
+
+let elems = document.querySelectorAll("li");
+// returns an array like object
+
+elems.forEach(elem => {
+    elem.style.backgroundColor = "lightblue";
+})
+
