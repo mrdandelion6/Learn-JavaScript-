@@ -1353,7 +1353,7 @@ finally { // this block always executes at the end of try-catch stuff
 }
 // useful for stuff like closing files at the end
 
-// SETTIMEOUT() METHOD
+// SETTIMEOUT() FUNCTION
 // setTimeout(f, t) invokes a callback f and t milliseconds
 // doesn't pause the execution of the code! it is asynchronous
 
@@ -1403,4 +1403,23 @@ document.getElementById("BUYcourse").onclick = function () {
     clearTimeout(timer2);
     clearTimeout(timer3);
     alert("thx for buying <33")
+}
+
+// SETINTERVAL() FUNCTION
+// setInterval() invokes a function repeatedly after a given amount of time
+// asychornous; doesn't pause execution of code
+
+c = 0;
+let max = window.prompt("count up to.. ?");
+max = Number(max);
+
+const mytimer = setInterval(countUp, 1000);
+
+function countUp() {
+    c ++;
+    console.log(c);
+
+    if (c  >= max) {
+        clearInterval(mytimer);
+    }
 }
