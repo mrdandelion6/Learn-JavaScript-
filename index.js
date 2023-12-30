@@ -1,36 +1,36 @@
-
-class Car {
-    constructor(power) {
-        this._power = power; 
-        this._gas = 25;
-    }
-
-    get power() { 
-        return `${this._power}hp`;
-    }
-    get gas() { 
-        return `${this._gas}L (${this._gas / 50 * 100}%)`;
-    }
-
-    // note setters must have EXACTLY one parameter
-    set gas(value) {
-        if (value > 50) {
-            value = 50;
-        } else if (value < 0) {
-            value = 0;
-        }
-        this._gas = value;
+class Card {
+    constructor(value, suit) {
+        this.value = value;
+        this.suit = suit;
     }
 }
 
-let car11 = new Car(500);
-console.log(car11.gas);
+// normal way
+let card1 = new Card("A", "Hearts");
+let card2 = new Card("A", "Spades");
+let card3 = new Card("A", "Diamonds");
+let card4 = new Card("A", "Clubs");
+let card5 = new Card("2", "Hearts");
+let card6 = new Card("2", "Spades");
+let card7 = new Card("2", "Diamonds");
+let card8 = new Card("2", "Clubs");
 
-car11.gas = 40;
-console.log(car11.gas);
+let cards = [card1, card2, card3, card4, card5, card6, card7, card8];
 
-car11.gas = 100;
-console.log(car11.gas);
+console.log(cards[0].value, cards[0].suit);
 
-car11.gas = -30;
-console.log(car11.gas);
+// no need to create 8 unique names!! hint: we are storing them in an array 
+
+// anonymous version:
+let cards2 = [
+new Card("A", "Hearts"),
+new Card("A", "Spades"),
+new Card("A", "Diamonds"),
+new Card("A", "Clubs"),
+new Card("2", "Hearts"),
+new Card("2", "Spades"),
+new Card("2", "Diamonds"),
+new Card("2", "Clubs")]
+
+// simple
+console.log(cards[0].value, cards[0].suit);
