@@ -2225,3 +2225,101 @@ window.confirm("press ok to continue");
 // window.prompt() takes in some user input
 let aage = window.prompt("enter your age");
 
+
+// COOKIES
+// a cookie is a small text file which is stored on your computer
+// it is used to rememebr information about the user
+// it's saved in name=value pairs
+
+// to see if we have coookies enabled, you can type the following:
+
+console.log(navigator.cookieEnabled);
+// returns true or false
+
+// adding cookies
+document.cookie = "firstName=Sponge; expires=Sun, 1 January 2030 120:00:00 UTC; path=/";
+// we can store some firstName value, as well as an expiry date and a path.
+// the path specifies the URL path for which the cookie is valid
+
+document.cookie = "lastName=SquarePants; expires=Sun, 1 January 2030 120:00:00 UTC; path=/";
+// this does not override previous firstName value.
+// it is kind of weird, but cookie is an objection that stores all these values
+// and setting cookie = something doesnt change its value, it just adds new value property
+
+
+// logging document.cookie will show all the values in the cookie object
+// so it will show both firstName and lastName
+console.log(document.cookie);
+
+// to override an existing cookie, just pass in the same value, eg:
+document.cookie = "lastName=SquareShorts; expires=Sun, 1 January 2030 120:00:00 UTC; path=/";
+console.log(document.cookie);
+// lastName value got changed
+
+// setting a cookie's expiration date to a day that has already passed will delete the cookie
+
+// function to make cookies
+
+function setCookie(name, value, daysTillExpire) {
+    const date = new Date();
+    date.setTime(date.getTime() + daysTillExpire * 24 * 60 * 60 * 1000);
+    // convert days to expire into ms (24)(60)(60)(1000)
+
+    let expires = "expires=" + date.toUTCString();
+
+    document.cookie = `${name}=${value}; ${expires}; path=/`;
+}
+
+setCookie("email", "bro@gmail.com", 5);
+console.log(document.cookie);
+
+// function for deleting cookies
+
+function deleteCookie(name) {
+    setCookie(name, null, null);
+}
+
+deleteCookie("lastName");
+
+function getCookie(name) {
+    const cDecoded = decodeURIComponent(document.cookie);
+    // returns all of the cookies as a string
+
+    // split each cookie into an array
+    const cArray = cDecoded.split("; ");
+    console.log(cArray);
+
+    cArray.forEach(elem => {
+        // for every element in the array, split it into two parts, name and value
+        nv = elem.split("=");
+
+        if (nv[0] == name){ // first index of nv contains the name
+            console.log(nv[1]); // second index contains value
+        }
+    });
+}
+
+getCookie("email");
+
+// another version of the getCookie method, returns instead of logging
+function getCookie(name) {
+    const cDecoded = decodeURIComponent(document.cookie);
+
+    const cArray = cDecoded.split("; ");
+
+
+    // recall forEach loop vs for-of loop!
+    // forEach loop cannot break out of loop and return a value,
+    // hence we use a for-of loop. for-of loops are lie for (elem : array) loops in java or for x in array loops in python.
+    for (elem of cArray) {
+        nv = elem.split("=");
+
+        if (nv[0] == name){ 
+            return nv[1]; 
+        }
+    }
+    return "no such cookie";
+}
+
+console.log(getCookie("email"));
+console.log(getCookie("bars"));
