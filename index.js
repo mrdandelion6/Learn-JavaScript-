@@ -1,20 +1,32 @@
-let element = document.querySelector("#veg");
 
-let parent = element.parentElement;
-console.log(parent); // selects body
+// ADDING/CHANGING HTML ELEMENTS
 
-let sibling = element.nextElementSibling;
-sibling.style.backgroundColor = "lightgreen";
+// creating a new element tag
+const nameTag = document.createElement("h2");
 
+// two ways to change html element
+// 1) .innerHTML (vulnerable to XSS attacks)
+// 2) .textContent (more secure)
 
-// we can also access children of an element using .children which is an array like property
+nameTag.textContent = "YOSKIES";
+document.body.append(nameTag);
 
-let child = element.children[1];
-child.style.backgroundColor = "lightgreen";
+// issue with using innerHTML: by altering innerHTML, it is possible to run a script!
+// in other words, if users can alter innerHTML then they can run scripts on your website.
+// this is done by also assigning tags along with some text.
 
-// to select all children we do this:
-let childrenn = Array.from(element.children); // we convert the array-like object into an array so we can use forEach on it.
+// textContent cannot do this and only display everything as text
+// anything given as textContent is only parsed as text.
 
-childrenn.forEach(child => {
-    child.style.backgroundColor = "lightgreen";
-})
+// let us try adding something to an HTML list
+
+const myList = document.getElementById("fruit");
+const listItem = document.createElement("li");
+listItem.textContent = "mango";
+
+// myList.append(listItem);
+// myList.prepend(listItem); // to put at start of list
+
+// to put at a specific spot we must do this:
+myList.insertBefore(listItem, myList.getElementsByTagName("li")[2]);
+// the index [2] is the index in the list where we want it
