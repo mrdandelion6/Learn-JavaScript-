@@ -2128,9 +2128,59 @@ function begin() {
 }
 
 
+// Canvas API = a means for drawing graphics
+// used for animations, games, and data visualization
 
+// make a canvas element in our HTML document
+let canvas = document.querySelector("#myCanvas");
+let context = canvas.getContext("2d");
+// context is the "painting" inside the canvas
 
+// to draw on the canvas, we need to draw on the context, not the canvas itself
 
+// drawing lines on canvas
+context.strokeStyle = "red";
+context.lineWidth = 2;
+context.beginPath();
+context.moveTo(0, 0);  // we place our "brush" on the canvas at our starting position
+context.lineTo(250, 250); // one line to the center from our moveTo position
+context.lineTo(250, 500); // one line from our last position to the bottom
 
+context.moveTo(500, 0); // change our starting position
+context.lineTo(250, 250); // change our starting position
+context.stroke(); // finish it by doing stroke
 
+// drawing traingle
+context.strokeStyle = "green";
+context.lineWidth = 2;
+context.fillStyle = "red";
+context.beginPath();
+context.moveTo(250, 0);
+context.lineTo(0, 250);
+context.lineTo(500, 250);
+context.lineTo(250, 0);
+// instead of doing context.stroke(), we can do context.fill() to fill the triangle
+context.fill();
+context.stroke(); // add this for an outline as well
 
+// drawing rectangle
+context.strokeStyle = "black";
+context.lineWidth = 3;
+context.fillStyle = "red";
+// .strokeRect(x, y, w, h)
+context.strokeRect(0, 0, 250, 250) // very fast!
+context.fillRect(0, 0, 250, 250) // very fast!
+
+// drawing circle
+// context.arc(x, y, r, sAngle, eAngle, ccw)
+// starting angle and ending angle are in radians
+// for full circle we go from 0 to 2PI
+context.beginPath();
+context.arc(250, 250, 150, 0, 2 * Math.PI);
+context.stroke();
+
+// drawing text
+context.font = "50px MV Boli";
+context.fillStyle = "red";
+context.textAlign = "center";
+context.fillText("YOU WIN!", canvas.width / 2, canvas.height / 2);

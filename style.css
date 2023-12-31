@@ -24,3 +24,8 @@
 .hidden {
     display: none;
 }
+
+#myCanvas {
+    border: 1px solid;
+    /* background-color: antiquewhite; */
+}
