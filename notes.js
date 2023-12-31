@@ -1887,3 +1887,35 @@ myDiv.onmouseleave = function () {
     myDiv.style.backgroundColor = "lightblue";
 }
 
+// ADDEVENTLISTENER
+// .addEventListener(event, function, useCapture)
+// one element can have several event listeners
+// element.addEventListener(event, function, useCapture)
+
+// benefit of using addEventListener is that we can wait for multiple events
+
+innerDiv.addEventListener("click", function () {
+    changeBlue(innerDiv);
+});
+
+outerDiv.addEventListener("click", function () {
+    changeBlue(outerDiv);
+}, true);
+
+function changeBlue(element) {
+    alert(`you selected ${element.id}`)
+    element.style.backgroundColor = "lightblue";
+}
+// since innerDiv is nested within outerDiv, the clicks will overlap when clicking innerDiv
+// the question is, which one do we want to be triggered first? both together, or only one? 
+// using alerts we see that by default the inner happens first
+
+// passing in true for the third argument into addEventListener, useCapture, will make this event happen first
+// so we can pass in true for outerDiv's event listener!
+
+outerDiv.addEventListener("click", function () {
+    changeBlue(outerDiv);
+}, true); // we pass in true as the third arg!
+// now outerDiv's event happens first (can see this with the alerts)
+
+// so we can use useCapture argument if two elements are taking the same space and listening for the same event (eg; a click), we can specify which one  has preference.

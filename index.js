@@ -1,28 +1,23 @@
-// events are user interactions etc.
-// for instance, onclick event
 
-// we can have the HTML code reference the functions here
-function doSomething() {
-    alert("you did something !")
+// element.addEventListener(event, function, useCapture)
+const innerDiv = document.getElementById("innerDiv");
+const outerDiv = document.getElementById("outerDiv");
+
+innerDiv.addEventListener("click", function () {
+    changeBlue(innerDiv);
+});
+
+function changeBlue(element) {
+    alert(`you selected ${element.id}`)
+    element.style.backgroundColor = "lightblue";
 }
+// since innerDiv is nested within outerDiv, the clicks will overlap when clicking innerDiv
+// the question is, which one do we want to be triggered first? both together, or only one? 
+// using alerts we see that by default the inner happens first
 
-// or we can directly set events here as well
-document.getElementById("myButt").onclick = function () {
-    alert("you clicked the BUTTON!")
-}
-// another event is onload; does the function when website loads in
+// passing in true for the third argument into addEventListener, useCapture, will make this event happen first
+// so we can pass in true for outerDiv's event listener!
 
-// another is onchange; does when the element has been changed
-document.getElementById("nameText").onchange = function () {
-    alert("YO!");
-}
-
-let myDiv = document.getElementById("div1");
-
-myDiv.onmouseover = function () {
-    myDiv.style.backgroundColor = "lightgreen";
-}
-
-myDiv.onmouseleave = function () {
-    myDiv.style.backgroundColor = "lightblue";
-}
+outerDiv.addEventListener("click", function () {
+    changeBlue(outerDiv);
+}, true);
