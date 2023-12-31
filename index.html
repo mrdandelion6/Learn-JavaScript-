@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1 id="helloworld">Hello World!</h1>
@@ -13,9 +14,13 @@
 
     <label for="nameText" id="myLabel">Enter your name:</label><br>
     <input type="text" id="nameText"><br>
-    <button type="button" id="submitButton">submit</button><br>
+    <button type="button" id="submitButton" onclick="doSomething()">submit</button><br>
     &nbsp; <br>
     &nbsp; <br>
+
+    <div id="div1"></div>
+
+    <button type="button" id="myButt">BUTOON</button> <br>
 
     
     <label for="BoxYa">say hi</label>
@@ -69,6 +74,6 @@
 <!-- good practice to put the script element at bottom of body -->
 <!-- want to render basic html content before script is parsed -->
 <!-- moreover, the script is likely reliant on existing html code, want to first render html -->
-<script type="module" src="index.js"></script>
+<script src="index.js"></script>
 </body>
 </html>
