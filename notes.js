@@ -2184,3 +2184,44 @@ context.font = "50px MV Boli";
 context.fillStyle = "red";
 context.textAlign = "center";
 context.fillText("YOU WIN!", canvas.width / 2, canvas.height / 2);
+
+
+// WINDOW OBJECT
+// window is an interface used to talk to the web browser
+// the DOM is a property of the window
+
+console.dir(window);
+// document is a property of window
+console.log(window.innerHeight);
+console.log(window.innerWidth);
+
+// there is also scroll values
+console.log(window.scrollX);
+console.log(window.scrollY);
+
+// we can also change href value of website which is found within location
+
+console.log(window.location);
+
+// window.location.href = "https://www.youtube.com";
+// our site will take us to youtube with the above uncommented
+
+myButt = document.querySelector("#beginButt");
+
+// useful methods:
+// window.open("link") opens a new tab of link
+// window.close() closes the site's tab 
+myButt.addEventListener("click", () => window.open("https://www.youtube.com"));
+
+// window.print() pops up print page menu
+myButt.addEventListener("click", () => window.print());
+
+// window.alert() displays a popup messasge
+window.alert("hello!");
+
+// window.confirm() displays a popup confirmation
+window.confirm("press ok to continue");
+
+// window.prompt() takes in some user input
+let aage = window.prompt("enter your age");
+
