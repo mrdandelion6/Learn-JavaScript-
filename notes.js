@@ -1849,3 +1849,24 @@ listItem.textContent = "mango";
 // to put at a specific spot we must do this:
 myList.insertBefore(listItem, myList.getElementsByTagName("li")[2]);
 // the index [2] is the index in the list where we want it
+
+// ADDING/CHANGING CSS PROPERTIES
+const title = document.getElementById("helloworld");
+
+title.style.backgroundColor = "lightgreen";
+// we say element.style.property = value;
+
+
+// EVENTS !!!
+// events are user interactions etc.
+// for instance, onclick event
+
+// we can have the HTML code reference the functions here
+function doSomething() {
+    alert("you did something !")
+}
+
+// or we can directly set events here as well
+document.getElementById("myButt").onclick = function () {
+    alert("you clicked the BUTTON!")
+}
