@@ -1,29 +1,20 @@
+let element = document.querySelector("#veg");
 
-// QUERY SELECTORS
-// a popular way to select elements
-// we can select element by an ID, classname, tag, or an attribute
+let parent = element.parentElement;
+console.log(parent); // selects body
 
-let element = document.querySelector("#menuTitle"); // ID example
-element.style.backgroundColor = "lightgreen";
+let sibling = element.nextElementSibling;
+sibling.style.backgroundColor = "lightgreen";
 
-element = document.querySelector(".deserts"); // class example
-element.style.backgroundColor = "lightgreen";
-// only selects the first element if there are several with same class
 
-element = document.querySelector("li"); // tag example
-element.style.backgroundColor = "lightgreen";
-// only selects the first element if there are several with same tag
+// we can also access children of an element using .children which is an array like property
 
-element = document.querySelector("[for]"); // attribute example
-element.style.backgroundColor = "lightgreen";
-// only selects the first element if there are several with same attribute
+let child = element.children[1];
+child.style.backgroundColor = "lightgreen";
 
-// to select all elements, we can use querySelectorAll
+// to select all children we do this:
+let childrenn = Array.from(element.children); // we convert the array-like object into an array so we can use forEach on it.
 
-let elems = document.querySelectorAll("li");
-// returns an array like object
-
-elems.forEach(elem => {
-    elem.style.backgroundColor = "lightblue";
+childrenn.forEach(child => {
+    child.style.backgroundColor = "lightgreen";
 })
-

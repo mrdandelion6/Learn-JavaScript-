@@ -1773,3 +1773,46 @@ elems.forEach(elem => {
     elem.style.backgroundColor = "lightblue";
 })
 
+// DOM TRAVERSAL TECHNIQUES
+let element = document.body;
+// we can traverse elements in body like so:
+let firstChild = element.firstElementChild; // gets first child
+firstChild.style.backgroundColor = "lightgreen";
+
+
+let lastChild = element.lastElementChild; // gets last child
+lastChild.style.backgroundColor = "lightgreen";
+console.log(lastChild);
+// ended up selecting script since its the last child of the body {}
+
+
+let element = document.querySelector("#veg");
+
+// parent
+parent = element.parentElement;
+console.log(parent); // selects body
+
+// sibling
+let sibling = element.nextElementSibling; // can also do previousElementSibling from last one
+sibling.style.backgroundColor = "lightgreen";
+
+let element = document.querySelector("#veg");
+
+let parent = element.parentElement;
+console.log(parent); // selects body
+
+let sibling = element.nextElementSibling;
+sibling.style.backgroundColor = "lightgreen";
+
+
+// we can also access children of an element using .children which is an array like property
+
+let child = element.children[1];
+child.style.backgroundColor = "lightgreen";
+
+// to select all children we do this:
+let childrenn = Array.from(element.children); // we convert the array-like object into an array so we can use forEach on it.
+
+childrenn.forEach(child => {
+    child.style.backgroundColor = "lightgreen";
+})
