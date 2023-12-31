@@ -1870,3 +1870,20 @@ function doSomething() {
 document.getElementById("myButt").onclick = function () {
     alert("you clicked the BUTTON!")
 }
+// another event is onload; does the function when website loads in
+
+// another is onchange; does when the element has been changed
+document.getElementById("nameText").onchange = function () {
+    alert("YO!");
+}
+
+let myDiv = document.getElementById("div1");
+
+myDiv.onmouseover = function () {
+    myDiv.style.backgroundColor = "lightgreen";
+}
+
+myDiv.onmouseleave = function () {
+    myDiv.style.backgroundColor = "lightblue";
+}
+
