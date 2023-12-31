@@ -53,6 +53,9 @@ person = {
     name: 'fsl', // object properties
     age: 20 // note no semicols
 };
+// the properties (keys), can also be strings!!
+// ie) we can use objects as dictionaries as well.
+
 
 // property access 2 ways:
 
@@ -67,6 +70,12 @@ person['name'] = 'sixpop';
 
 let selection = 'name'; // x may vary at runtime
 person[selection] = 'six';
+
+// even though objects are very similiar to maps (we will learn about map object later on line 880),
+// there are key differences: 
+// - maps allow for any type of keys (including numbers and booleans)
+// - maps preserve the order of key-value pair insertion
+// - maps are convenient to iterate over 
 
 // ARRAYS
 let selectedColors =['red', 'blue']; // arrays syntax literally (almost) same as python
@@ -1937,3 +1946,91 @@ butoon.addEventListener("click", function () {
 
 // display: block vs none (shifts elements up)
 // visibility: visible vs hidden (doesnt shift elements up)
+
+
+// DETECT KEY PRESSES
+// to do this we can add an event listener to our window
+window.addEventListener("keydown", event => {console.log(event.key)});
+
+// div1 position is set to relative
+const div1 = document.querySelector("#div1");
+window.addEventListener("keydown", move);
+
+x = 0; 
+y = 0;
+
+function move(event) {
+
+    switch(event.key) {
+        case "s":
+            y += 15;
+            div1.style.top = y + "px"; // style.top for vertical position
+            break;
+        case "w":
+            y -= 15;
+            div1.style.top = y + "px";
+            break;
+        case "d":
+            x += 15;
+            div1.style.left = x + "px"; // style.left for horizontal position
+            break;
+        case "a":
+            x -= 15;
+            div1.style.left = x + "px";
+            break;
+        default:
+            break;
+    }
+}
+
+// now if we want an even better way to move the div around, such that we can do diagonal movement as well
+// then we should keep track of all keys being pressed and have parallel cases for each!
+x = 0;
+y = 0;
+
+// keep track of all keys being pressed
+const keys = { // object!! we can use objects like dictionaries
+    "w": false,
+    "a": false,
+    "s": false,
+    "d": false,
+};
+
+window.addEventListener("keydown", event => {
+    keys[event.key] = true;
+    move();
+});
+
+window.addEventListener("keyup", event => {
+    keys[event.key] = false;
+    move();
+});
+
+
+
+function move() {
+    
+    function updatePos() {
+        div1.style.top = y + "px";
+        div1.style.left = x + "px";
+    }
+
+    if (keys["w"]) {
+        y -= 15;
+    }
+
+    if (keys["a"]) {
+        x -= 15;
+    }
+
+    if (keys["s"]) {
+        y += 15;
+    }
+
+    if (keys["d"]) {
+        x += 15;
+    }
+
+    updatePos(); 
+}
+
