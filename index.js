@@ -1,53 +1,25 @@
+// we want to begin an animation when we click the button
+const myButt = document.querySelector("#beginButt");
+const myAnimation = document.querySelector("#div1");
 
-// now if we want an even better way to move the div around, such that we can do diagonal movement as well
-// then we should keep track of all keys being pressed and have parallel cases for each!
-let x = 0;
-let y = 0;
+myButt.addEventListener("click", begin);
 
-// keep track of all keys being pressed
-const keys = {
-    "w": false,
-    "a": false,
-    "s": false,
-    "d": false,
-};
-
-const div1 = document.querySelector("#div1");
-
-window.addEventListener("keydown", event => {
-    keys[event.key] = true;
-    move();
-});
-
-window.addEventListener("keyup", event => {
-    keys[event.key] = false;
-    move();
-});
-
-
-
-function move() {
+// scaling image
+function begin() {
+    let timerID = null;
+    let scaleX = 1;
+    let scaleY = 1;
     
-    function updatePos() {
-        div1.style.top = y + "px";
-        div1.style.left = x + "px";
-    }
+    timerID = setInterval(frame, 5);
+    // repeatedly invoke frame() every 5 ms
 
-    if (keys["w"]) {
-        y -= 15;
+    function frame() {
+        if (scaleX >= 2) {
+            clearInterval(timerID);
+        } else {
+            scaleX += 0.01;
+            scaleY += 0.01;
+            myAnimation.style.transform = "scale("+scaleX+","+scaleY+")";
+        }
     }
-
-    if (keys["a"]) {
-        x -= 15;
-    }
-
-    if (keys["s"]) {
-        y += 15;
-    }
-
-    if (keys["d"]) {
-        x += 15;
-    }
-
-    updatePos(); 
 }

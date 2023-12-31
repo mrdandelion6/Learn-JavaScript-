@@ -2034,3 +2034,103 @@ function move() {
     updatePos(); 
 }
 
+
+// ANIMATIONS !!!
+
+// element sliding animation:
+// we want to begin an animation when we click the button
+const myButt = document.querySelector("#beginButt");
+const myAnimation = document.querySelector("#div1");
+
+myButt.addEventListener("click", begin);
+
+function begin() {
+    let timerID = null;
+    let x = 0;
+    let y = 0;
+
+    timerID = setInterval(frame, 5);
+    // repeatedly invoke frame() every 5 ms
+
+    function frame() {
+        if (x >= 200) {
+            clearInterval(timerID);
+            // stop animation when x reaches a position of 200px
+        } else {
+            x += 1;
+            myAnimation.style.left = x + "px";
+        }
+    }
+}
+
+// rotation animation:
+
+function begin() {
+    let timerID = null;
+    let degrees = 0;
+
+    timerID = setInterval(frame, 5);
+    // repeatedly invoke frame() every 5 ms
+
+    function frame() {
+        if (degrees >= 360) {
+            clearInterval(timerID);
+        } else {
+            degrees ++;
+            myAnimation.style.transform = "rotateZ("+degrees+"deg)";
+            // can change this to X or Y to rotate on those axis (Z is out of page)
+        }
+    }
+}
+
+// rotate and move diagonally:
+function begin() {
+    let timerID = null;
+    let degrees = 0;
+    let x = 0;
+    let y = 0;
+
+    timerID = setInterval(frame, 5);
+    // repeatedly invoke frame() every 5 ms
+
+    function frame() {
+        if (degrees >= 360 && x >= 200) { // goes until both conditions are met!
+            clearInterval(timerID);
+        } else {
+            degrees += 2;
+            x += 2;
+            y += 2;
+            myAnimation.style.top = y + "px";
+            myAnimation.style.left = x + "px";
+            myAnimation.style.transform = "rotateZ("+degrees+"deg)";        }
+    }
+}
+
+// scaling image
+function begin() {
+    let timerID = null;
+    let scaleX = 1;
+    let scaleY = 1;
+    
+    timerID = setInterval(frame, 5);
+    // repeatedly invoke frame() every 5 ms
+
+    function frame() {
+        if (scaleX >= 2) {
+            clearInterval(timerID);
+        } else {
+            scaleX += 0.01;
+            scaleY += 0.01;
+            myAnimation.style.transform = "scale("+scaleX+","+scaleY+")";
+            // the transform strings are weird, dont need to memorize all of them!
+        }
+    }
+}
+
+
+
+
+
+
+
+
