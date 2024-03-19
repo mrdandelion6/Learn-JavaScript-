@@ -1558,10 +1558,10 @@ promise.then(value => console.log(value))
        .catch(error => console.log(error));
 
 // we must catch any reject() calls using promise.catch();
-// we can just trail it like thise promise.then().catch();
+// we can just trail it like this, promise.then().catch();
 
 // we don't even need a reject(), we can make promises without them
-// we can make a proise without a reject!
+// we can make a promise without a reject!
 const promise2 = new Promise(resolve => {
     // asynch code goes here
     setTimeout(resolve, 5000);
@@ -1610,6 +1610,7 @@ async function loadFile() {
         throw "file was not loaded"; // throws this value as reason for an error
     }
 }
+
 
 // then we simply don't need to make a promise object
 // since we put the async keyword on loadFile(), it returns a promise
