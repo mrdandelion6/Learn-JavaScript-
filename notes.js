@@ -56,6 +56,10 @@ person = {
 // the properties (keys), can also be strings!!
 // ie) we can use objects as dictionaries as well.
 
+person = {
+	"yo": "whaaat"
+};
+console.log(person.yo); // prints "whaaat"
 
 // property access 2 ways:
 
@@ -65,7 +69,7 @@ person.name = 'six';
 // bracket notation
 person['name'] = 'sixpop';
 
-// we nomrally use dot notation, and only really use bracket notation if the property name could vary at runtime.
+// we normally use dot notation, and only really use bracket notation if the property name could vary at runtime.
 // eg; if the users choose the property name, then we can have a variable for the property name:
 
 let selection = 'name'; // x may vary at runtime
