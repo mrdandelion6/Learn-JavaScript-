@@ -11,13 +11,13 @@
 let x = 1;
 x = 4;
 
-// CONTSTANTS
+// CONSTANTS
 // kind of like static variables in java, do not change
 const y = 0.5; // always use const on vars u dont need to reassign
 
-// below are some primative/value types:
+// below are some primitive/value types:
 // string, number, booleans, undefined, null
-// note, we don't have floats or integers, just number
+// note, we don't have floats or integers, just number for both
 
 let name = 'Faisal'; // typically use single quotes for strings in javascript
 let age = 19;
